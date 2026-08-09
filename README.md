@@ -4,4 +4,5 @@
 النسخة الكاملة (الألعاب، المعربون، الأدوات، الخط الزمني) قريباً.
 
 **رابط الموقع الحي:**
-https://ipwmxstj-prog.github.io/localization-lite/
+https://M7MD-Zz.github.io/localization-lite/
+
