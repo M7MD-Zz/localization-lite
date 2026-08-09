@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>موسوعة تعريب الألعاب العربية — السيرفرات والمواقع</title>
+    <meta name="description" content="نسخة مبسطة من موسوعة تعريب الألعاب العربية: كل سيرفرات ديسكورد ومواقع تحميل تعريبات الألعاب في مكان واحد — النسخة الكاملة قريباً." />
+    <meta name="keywords" content="تعريب ألعاب, العاب معربة, تعريب, سيرفرات ديسكورد, مواقع تعريب, موسوعة التعريب" />
+    <meta name="author" content="مجتمع التعريب" />
+    <meta name="theme-color" content="#0a0f1e" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="موسوعة تعريب الألعاب العربية — السيرفرات والمواقع" />
+    <meta property="og:description" content="كل سيرفرات ومواقع تعريب الألعاب العربية في مكان واحد — نسخة مبسطة، والنسخة الكاملة قريباً." />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:site_name" content="موسوعة تعريب الألعاب العربية" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="موسوعة تعريب الألعاب العربية — السيرفرات والمواقع" />
+    <meta name="twitter:description" content="كل سيرفرات ومواقع تعريب الألعاب العربية في مكان واحد." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+/* ==========================================================
+   موسوعة تعريب الألعاب العربية — النسخة المبسطة
+   (السيرفرات + المواقع فقط — نسخة كاملة قريباً)
+   ========================================================== */
+
+:root {
+    --bg: #0a0f1e;
+    --surface: #111a30;
+    --surface-2: #16203a;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e8ecf7;
+    --muted: #93a0bd;
+    --primary: #6c5ce7;
+    --secondary: #00d2ff;
+    --accent: #ff6b9d;
+    --gradient: linear-gradient(135deg, #6c5ce7 0%, #00d2ff 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(0, 210, 255, 0.15));
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 40px rgba(108, 92, 231, 0.25);
+    --radius: 18px;
+    --radius-sm: 12px;
+    --font: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-theme="light"] {
+    --bg: #f2f5fc;
+    --surface: #ffffff;
+    --surface-2: #eef1f9;
+    --border: rgba(10, 15, 30, 0.1);
+    --text: #131a33;
+    --muted: #5a6580;
+    --shadow: 0 20px 50px rgba(20, 30, 70, 0.12);
+    --shadow-glow: 0 0 40px rgba(108, 92, 231, 0.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+::selection { background: var(--primary); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary), var(--secondary)); border-radius: 10px; }
+
+img, svg { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+.container { width: min(1140px, 92%); margin-inline: auto; }
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== شريط التنقل ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    z-index: 1000;
+    padding: 18px 0;
+    transition: var(--transition);
+}
+.navbar.scrolled {
+    padding: 12px 0;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { font-size: 1.5rem; font-weight: 900; color: var(--text); letter-spacing: -0.5px; }
+.logo .dot { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.nav-link {
+    position: relative;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--muted);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    right: 16px;
+    left: 16px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.nav-link:hover { color: var(--text); }
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { color: var(--text); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.theme-toggle, .hamburger {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    display: grid;
+    place-items: center;
+    transition: var(--transition);
+}
+.theme-toggle:hover, .hamburger:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; }
+.hamburger span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== القسم الرئيسي ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+}
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%);
+    opacity: 0.6;
+}
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.45;
+    animation: float 14s ease-in-out infinite;
+}
+.blob-1 { width: 480px; height: 480px; background: var(--primary); top: -120px; inset-inline-start: -120px; }
+.blob-2 { width: 380px; height: 380px; background: var(--secondary); bottom: -100px; inset-inline-end: -100px; animation-delay: -7s; }
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+}
+.hero-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    box-shadow: var(--shadow-glow);
+}
+.pulse-dot { width: 9px; height: 9px; border-radius: 50%; background: #2ecc71; position: relative; }
+.pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: #2ecc71;
+    opacity: 0.4;
+    animation: pulse 1.8s ease-out infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(0.6); opacity: 0.6; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+.hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.3; margin: 22px 0 8px; }
+.hero-role { font-size: clamp(1.2rem, 2.6vw, 1.7rem); font-weight: 800; min-height: 2.2em; color: var(--text); }
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    background: var(--gradient);
+    vertical-align: middle;
+    animation: blink 0.9s steps(1) infinite;
+    border-radius: 2px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.hero-desc { color: var(--muted); font-size: 1.08rem; max-width: 560px; margin-bottom: 32px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    transition: var(--transition);
+}
+.btn-primary { background: var(--gradient); color: #fff; box-shadow: var(--shadow-glow); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(108, 92, 231, 0.45); }
+.btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+.socials { display: flex; gap: 12px; }
+.socials a {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    font-size: 1.15rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+.socials a:hover {
+    color: #fff;
+    background: var(--gradient);
+    border-color: transparent;
+    transform: translateY(-4px) rotate(6deg);
+    box-shadow: var(--shadow-glow);
+}
+.hero-visual { position: relative; display: grid; place-items: center; }
+.avatar-ring {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    padding: 8px;
+    background: var(--gradient);
+    box-shadow: var(--shadow), var(--shadow-glow);
+    animation: spin-ring 16s linear infinite;
+}
+@keyframes spin-ring { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--surface-2);
+    display: grid;
+    place-items: center;
+    animation: spin-ring 16s linear infinite reverse;
+}
+.avatar i {
+    font-size: 5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.float-card {
+    position: absolute;
+    padding: 12px 20px;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    font-size: 0.92rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: float 5s ease-in-out infinite;
+}
+.float-card i { color: var(--secondary); font-size: 1.1rem; }
+.card-1 { top: 12%; inset-inline-start: -4%; animation-delay: 0s; }
+.card-2 { bottom: 16%; inset-inline-end: -2%; animation-delay: -2.5s; }
+.scroll-indicator {
+    position: absolute;
+    bottom: 28px;
+    inset-inline-start: 50%;
+    transform: translateX(50%);
+    width: 26px;
+    height: 44px;
+    border: 2px solid var(--muted);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    opacity: 0.6;
+    transition: var(--transition);
+}
+.scroll-indicator:hover { opacity: 1; border-color: var(--primary); }
+.scroll-indicator span {
+    width: 4px;
+    height: 9px;
+    border-radius: 4px;
+    background: var(--gradient);
+    animation: scroll-wheel 1.8s ease-in-out infinite;
+}
+@keyframes scroll-wheel {
+    0% { transform: translateY(0); opacity: 1; }
+    70% { transform: translateY(14px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ===== الأقسام العامة ===== */
+.section { padding: 110px 0; position: relative; }
+.section-head { text-align: center; max-width: 620px; margin: 0 auto 60px; }
+.section-tag {
+    display: inline-block;
+    padding: 6px 18px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+.section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; margin-bottom: 12px; }
+.section-head p { color: var(--muted); font-size: 1.05rem; }
+
+/* ===== سيرفرات الديسكورد ===== */
+.communities { background: var(--gradient-soft); }
+.communities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 16px;
+}
+.comm-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+.comm-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+    box-shadow: var(--shadow-glow);
+}
+.comm-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+}
+.comm-info { flex: 1; min-width: 0; }
+.comm-info h3 {
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.comm-info p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.comm-meta { margin-top: 5px; }
+.comm-members {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.comm-join {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 10px;
+    background: var(--gradient);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+.comm-join:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+.comm-links { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; }
+.comm-site {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 12px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--secondary);
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    transition: var(--transition);
+}
+.comm-site:hover {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* ===== مواقع التعريب ===== */
+.sites { background: var(--gradient-soft); }
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+.site-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+.site-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+    box-shadow: var(--shadow-glow);
+}
+.site-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    color: var(--primary);
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+.site-icon img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.site-info { flex: 1; min-width: 0; }
+.site-info h3 {
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.site-info p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.site-visit {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    color: var(--primary);
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+.site-card:hover .site-visit {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+}
+.site-links { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; }
+.site-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 12px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--secondary);
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    transition: var(--transition);
+}
+.site-tag:hover {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* ===== شارات حالة النشاط ===== */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+    padding: 2px 11px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 100px;
+    line-height: 1.6;
+    border: 1px solid;
+    width: fit-content;
+    transition: var(--transition);
+}
+.status-badge i { font-size: 0.55rem; }
+.status-active {
+    color: #2ecc71;
+    background: rgba(46, 204, 113, 0.1);
+    border-color: rgba(46, 204, 113, 0.35);
+}
+.status-stopped {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.35);
+}
+[data-theme="light"] .status-active { color: #15803d; background: rgba(21, 128, 61, 0.08); }
+[data-theme="light"] .status-stopped { color: #b45309; background: rgba(180, 83, 9, 0.08); }
+.badge-academic {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+    padding: 2px 11px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    border-radius: 100px;
+    line-height: 1.6;
+    width: fit-content;
+    color: #a29bfe;
+    background: rgba(108, 92, 231, 0.12);
+    border: 1px solid rgba(108, 92, 231, 0.4);
+}
+[data-theme="light"] .badge-academic { color: #5b4bc4; background: rgba(108, 92, 231, 0.08); }
+
+/* ===== التذييل ===== */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+.footer .fa-heart { color: var(--accent); animation: heartbeat 1.4s ease-in-out infinite; }
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.25); }
+    40% { transform: scale(1); }
+}
+.back-to-top {
+    position: fixed;
+    bottom: 26px;
+    inset-inline-end: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    border: none;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 1.05rem;
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-glow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition);
+    z-index: 900;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-4px); }
+
+/* ===== حركات الظهور ===== */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== التجاوب ===== */
+@media (max-width: 992px) {
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 70px; }
+    .hero-desc { margin-inline: auto; }
+    .hero-btns, .socials { justify-content: center; }
+    .card-1 { inset-inline-start: 6%; }
+    .card-2 { inset-inline-end: 6%; }
+}
+@media (max-width: 768px) {
+    .section { padding: 80px 0; }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        inset-inline-end: -100%;
+        width: min(320px, 80%);
+        height: 100vh;
+        background: var(--surface);
+        border-inline-start: 1px solid var(--border);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 100px 30px 40px;
+        gap: 6px;
+        overflow-y: auto;
+        transition: inset-inline-end 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: var(--shadow);
+        z-index: 998;
+    }
+    .nav-links.open { inset-inline-end: 0; }
+    .nav-link { padding: 14px 16px; font-size: 1.05rem; }
+    .nav-link::after { display: none; }
+    .nav-link:hover, .nav-link.active { background: var(--gradient-soft); }
+    .hamburger { display: flex; z-index: 999; position: relative; }
+    .avatar-ring { width: 240px; height: 240px; }
+    .avatar i { font-size: 3.8rem; }
+    .communities-grid { grid-template-columns: 1fr; }
+    .comm-card { flex-wrap: wrap; }
+    .comm-join { width: 100%; justify-content: center; }
+    .sites-grid { grid-template-columns: 1fr; }
+    .site-card { flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+    .hero-btns .btn { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+}
+    </style>
+</head>
+<body>
+
+    <!-- ======= شريط التنقل ======= -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">موسوعة التعريب<span class="dot">.</span></a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="#communities" class="nav-link">سيرفرات</a>
+                <a href="#sites" class="nav-link">مواقع</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="القائمة">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= القسم الرئيسي ======= -->
+    <section class="hero" id="home">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-overlay"></div>
+
+        <div class="container hero-inner">
+            <div class="hero-text reveal">
+                <span class="badge"><span class="pulse-dot"></span> موسوعة مجتمع التعريب</span>
+                <h1>موسوعة مجتمع <span class="gradient-text">تعريب الألعاب</span></h1>
+                <p class="hero-role"><span id="typing"></span><span class="cursor">&nbsp;</span></p>
+                <p class="hero-desc">
+                    كل سيرفرات ومواقع تعريب الألعاب العربية في مكان واحد — تعريبات مجانية
+                    من فرق وأفراد شغوفين. هذه نسخة مبسطة، والنسخة الكاملة قريباً.
+                </p>
+                <div class="hero-btns">
+                    <a href="#communities" class="btn btn-primary">استكشف السيرفرات <i class="fa-brands fa-discord"></i></a>
+                    <a href="#sites" class="btn btn-ghost">مواقع التعريب <i class="fa-solid fa-globe"></i></a>
+                </div>
+                <div class="socials">
+                    <a href="https://x.com/MhdGameloc" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com/users/769908857144082504" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="avatar-ring">
+                    <div class="avatar"><i class="fa-solid fa-gamepad"></i></div>
+                </div>
+                <div class="float-card card-1"><i class="fa-solid fa-users"></i> أكثر من 30 سيرفر</div>
+                <div class="float-card card-2"><i class="fa-solid fa-globe"></i> 29+ موقع تعريب</div>
+            </div>
+        </div>
+
+        <a href="#communities" class="scroll-indicator" aria-label="انزل للأسفل"><span></span></a>
+    </section>
+
+    <!-- ======= سيرفرات الديسكورد ======= -->
+    <section class="section communities" id="communities">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">سيرفرات الديسكورد</span>
+                <h2>مجتمعات <span class="gradient-text">التعريب</span></h2>
+                <p>انضم لأكبر فرق ومجتمعات تعريب الألعاب العربية — كل سيرفر يقدّم تعريبات مميزة لأشهر الألعاب.</p>
+            </div>
+
+            <div class="communities-grid">
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/460068317647077396/472bd53f93e82b7323228bcebd4a07af.png?size=128" alt="شعار AR Team" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>AR Team</h3>
+                        <p>نسعى لإضافة اللغة العربية إلى الألعاب المميزة على منصة الحاسب الشخصي — عرّبنا Star Wars Jedi: Fallen Order بالكامل (نصوص وقوائم).</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 59,852 عضو</span></div>
+                        <div class="comm-links"><a href="https://x.com/_AR_Team" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-x-twitter"></i> تويتر</a></div>
+                    </div>
+                    <a href="https://discord.gg/zpVpQAe" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1100527978829598801/a_ff41a6def08aed1c8f8a545b01858e53.gif?size=128" alt="شعار آفاق التعريب" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>آفاق التعريب</h3>
+                        <p>فريق متمرس، يقدم تعريبات بشرية بالكامل ذو جودة عالية.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 37,977 عضو</span></div>
+                        <div class="comm-links"><a href="https://arhorizons.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a><a href="https://x.com/ArabizaHorizons" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-x-twitter"></i> تويتر</a><a href="https://heylink.me/ArabizationHorizons/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-link"></i> كل الحسابات</a></div>
+                    </div>
+                    <a href="https://discord.gg/TaTd4YS8U" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/940552731725291530/a_1e7babf7a4a5e299530e607dd623a6e9.gif?size=128" alt="شعار Redemption Team" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Redemption Team</h3>
+                        <p>الفريق الرسمي المختص بتعريب لعبة Red Dead Redemption 2 ولنا مشاريع مستقبلية أخرى.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 37,119 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/aWYdnVaRBk" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1053230456411275325/66796d3478887f8813abe646deaef481.png?size=128" alt="شعار Arabize It" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Arabize It</h3>
+                        <p>سيرفر مخصص لتعريب الألعاب مع قناة يوتيوب تعرض أحدث التعريبات.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 31,755 عضو</span></div>
+                        <div class="comm-links"><a href="https://www.youtube.com/@ArabizeIt" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-youtube"></i> يوتيوب</a></div>
+                    </div>
+                    <a href="https://discord.gg/EnggNHrGs5" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1383459475423367320/db5f04ebe47c69acfc9e4ef96e65df9d.png?size=128" alt="شعار FLTAH server" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>FLTAH server</h3>
+                        <p>مجتمع عربي متخصص في الألعاب والتعريب — تعريب Baldur's Gate 3 وKingdom Hearts 3 عبر منصة FLTAH VIP (أكثر من 100 لعبة مترجمة).</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 28,419 عضو</span></div>
+                        <div class="comm-links"><a href="https://www.youtube.com/@FLTAH" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-youtube"></i> يوتيوب</a></div>
+                    </div>
+                    <a href="https://discord.gg/eq6nGc4hmk" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/819496464392257536/a_76ed1b8fd7ee4de8482d77901b542510.gif?size=128" alt="شعار Play in Arabic" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Play in Arabic</h3>
+                        <p>تجربة لعب عربية فريدة مع تعريب احترافي لأفضل الألعاب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 25,683 عضو</span></div>
+                        <div class="comm-links"><a href="https://www.playinarabic.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a></div>
+                    </div>
+                    <a href="https://discord.gg/49vJUWCrad" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1288609508129505331/07cb60d7a415748d62587d07d6cabfc3.png?size=128" alt="شعار GamDroid AR" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>GamDroid AR</h3>
+                        <p>مجتمع متخصص في ألعاب وتطبيقات الأندرويد بدعم عربي كامل.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 23,101 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/m2VcUJ4cpV" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/866086991921020959/36ab11b0054233a115f675fea289510c.png?size=128" alt="شعار Arabic Subtitles" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Arabic Subtitles</h3>
+                        <p>سيرفر لتعريب الألعاب وتقديم ترجمات عربية مميزة.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 16,653 عضو</span></div>
+                        <div class="comm-links"><a href="https://arb-sub.blogspot.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a></div>
+                    </div>
+                    <a href="https://discord.gg/vZVm3RpEv5" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1348666847268048936/aa65b6ae01b442d92a072681d76589a6.png?size=128" alt="شعار Mahfda Arabic" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Mahfda Arabic</h3>
+                        <p>سيرفر موقع محفظة لتعريب الألعاب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 15,557 عضو</span></div>
+                        <div class="comm-links"><a href="https://mahfda.blogspot.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a></div>
+                    </div>
+                    <a href="https://discord.gg/SuBS33y4xe" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1422515091353632801/be121520767ee64d908eae86b8186790.png?size=128" alt="شعار Free War Gamer" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Free War Gamer</h3>
+                        <p>مجتمع للألعاب المجانية مع شروحات وطرق التحميل من الموقع.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 12,275 عضو</span></div>
+                        <div class="comm-links"><a href="https://free-wargamer.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a></div>
+                    </div>
+                    <a href="https://discord.gg/F8nyj58rPV" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/299680958540414987/ce21b013839b4002fbfcd15a927aeb62.png?size=128" alt="شعار الحلم المتجدد للتعريب" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>الحلم المتجدد للتعريب</h3>
+                        <span class="status-badge status-active"><i class="fa-solid fa-circle"></i> نشط</span>
+                        <p>فريق ترجمة ألعاب نشط — تعريبات حديثة (Mark of the Ninja، CRYMACHINA) مع دروس تثبيت على موقعه.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 10,025 عضو</span></div>
+                        <div class="comm-links"><a href="https://etrdream.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a><a href="https://x.com/EternalDreamAR" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-x-twitter"></i> تويتر</a></div>
+                    </div>
+                    <a href="https://discord.gg/HdPYkgjpHM" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1317882100132872306/5ca89126bf3011106ca0e7efee7b6bb3.png?size=128" alt="شعار فريق مَجدُ العُروبة" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>فريق مَجدُ العُروبة</h3>
+                        <p>تعريب الألعاب بجودة عالية وفريق متكامل — تعريبات Metal Gear Solid (PS3 وPC) بدليل تثبيت كامل.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 9,499 عضو</span></div>
+                        <div class="comm-links"><a href="https://majd-al-3orouba.web.app/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a></div>
+                    </div>
+                    <a href="https://discord.gg/cjFxkbau4T" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1131799473744523286/058d9cc58980a710d008b6f80103e16f.png?size=128" alt="شعار AG GROUP" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>AG GROUP</h3>
+                        <p>مجموعة ألعاب عربية للتواصل وتبادل الخبرات.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 7,965 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/q24Jhaxefx" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1230784161598410774/77ce63867687f598e22e8d86e3f9892b.png?size=128" alt="شعار فريق رحلة" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>فريق رحلة</h3>
+                        <p>فريق تعريب عربي — عرّب Mount & Blade II: Bannerlord (خيلٌ وسيف) وKingdom Come: Deliverance 2، مع منصة ترجمة مفتوحة (Weblate).</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 6,026 عضو</span></div>
+                        <div class="comm-links"><a href="https://web.archive.org/web/20250816022849/https://www.rihla.team/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a><a href="https://x.com/rihla_team" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-x-twitter"></i> تويتر</a></div>
+                    </div>
+                    <a href="https://discord.gg/MXq7Amqe3z" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/801175760090038272/f48b8b163ce19464cf4699cec03070be.png?size=128" alt="شعار Arabic Bonfire" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Arabic Bonfire</h3>
+                        <p>مجتمع عربي للعب والتواصل وتبادل الخبرات.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 3,929 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/2Wv4tHfSrR" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1276617621550399501/8b0cf16ff9fe75d3a8a4f71703537b02.png?size=128" alt="شعار Arab Core" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Arab Core</h3>
+                        <p>تعريب العاب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 2,276 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/FQBFRQUsz8" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/955006016624414740/a95ebbf3df0a16a2a8db0d099e156dcb.png?size=128" alt="شعار S.H.COD" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>S.H.COD</h3>
+                        <p>مجتمع مهتم بتعريب ألعاب المغامرات مثل God of War.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 2,236 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/QnE3UddSCn" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1121263146938675200/5aa950a50df47c60510c9d9d7b93fd2f.png?size=128" alt="شعار Arabian Legion" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Arabian Legion</h3>
+                        <p>مجتمع عربي للتعريبات والألعاب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 2,003 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/P3qPg68EYU" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1081688894115958854/979aa3015935eb4c7af9ff60f5bdf6e5.png?size=128" alt="شعار L.A. NOIRE تعريب" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>L.A. NOIRE تعريب</h3>
+                        <p>فريق مخصص لتعريب لعبة L.A. Noire.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,654 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/H7Qza3b8wv" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1173023461556355202/90d14412827203416d169b9e99f98406.png?size=128" alt="شعار GAMING REPUBLIC" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>GAMING REPUBLIC</h3>
+                        <p>جمهورية الألعاب — مجتمع عربي للألعاب والتعريب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,381 عضو</span></div>
+                        <div class="comm-links"><a href="https://gaming-republic.blogspot.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a></div>
+                    </div>
+                    <a href="https://discord.gg/dDKRNn9u2K" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1302308008155680789/29fbfaedbde23a0acbb9db2033baefd6.png?size=128" alt="شعار Athar Localization" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Athar Localization</h3>
+                        <p>أَثَرْ التَّعْرِيبْ — فريق تعريب عربي متخصص.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,292 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/CWQEYwsGMb" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1412130179349741701/f572ee30d76ab9a8d28f6dd71f877f0f.png?size=128" alt="شعار فريق كيريو تشان" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>فريق كيريو تشان 🇦🇪</h3>
+                        <p>سيرفر تعريب سلسلة ياكوزا.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,212 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/CKxhdAwD9e" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1467643335526187124/5da308d7a5c5d088bfeb97f357dbd29f.png?size=128" alt="شعار RCODEX" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>∆RCODEX</h3>
+                        <p>سيرفر مخصص لتعريب الألعاب وترجمة الأعمال الإنجليزية [ بدون ذكاء اصطناعي ].</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,150 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/gvfV43NsM" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1433388848280371273/27d3bb1a9c04893d71ca2d426eb21546.png?size=128" alt="شعار سُفَرَاءُ التَّعْرِيبِ" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>سُفَرَاءُ التَّعْرِيبِ | عَرِّبْهَا</h3>
+                        <p>مجتمع لتبادل الخبرات بين المعربين العرب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,056 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/myDht2Ke3U" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/910122340392771595/4618c169998de48d0d7018613a8f6f22.png?size=128" alt="شعار الشظية العربية" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>الشظية العربية</h3>
+                        <p>فريق يعرّب سلسلة When They Cry — عرّب رواية Umineko (حين تنوح النوارس) بالعربية كاملة، مع فريق شقيق يترجم Higurashi.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 1,096 عضو</span></div>
+                        <div class="comm-links"><a href="https://x.com/ArabicKakera" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-x-twitter"></i> تويتر</a><a href="https://linktr.ee/arabickakera" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-link"></i> كل الحسابات</a></div>
+                    </div>
+                    <a href="https://discord.gg/Tx57WBv8mf" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1505660563815006318/72fecbb864406d6f5c4b23319884c0d7.png?size=128" alt="شعار مكتبة أسمر" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>مكتبة أسمر | تعريبات الألعاب</h3>
+                        <p>مكتبة تعريبات ألعاب عربية شاملة.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 830 عضو</span></div>
+                        <div class="comm-links"><a href="https://asmar-ar.com/" target="_blank" rel="noopener" class="comm-site"><i class="fa-solid fa-globe"></i> الموقع</a><a href="https://x.com/AsmarGamesAR" target="_blank" rel="noopener" class="comm-site"><i class="fa-brands fa-x-twitter"></i> تويتر</a></div>
+                    </div>
+                    <a href="https://discord.gg/BP8WHAnKWM" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1486116244951400519/a_3a6a4e021e6b6872bbdd88a4b26f6154.gif?size=128" alt="شعار Thunder Server" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Thunder Server</h3>
+                        <p>مجتمع للألعاب وحل المشاكل، مع تفعيل أوفلاين مجاني لألعاب Denuvo.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 484 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/bKh4ppz23" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1415343209919283212/f25d0c2806cf502fd33f0c6f9d97d7a7.png?size=128" alt="شعار مُعَــرَّب" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>مُــعَــرَّب#</h3>
+                        <p>مجتمع متخصص في تعريب الألعاب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 400 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/5MDCfET7fq" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1343996361149779988/7e44dfa21f8ddea21317353e624e2c84.png?size=128" alt="شعار STARDUST" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>STARDUST - مجتمع المعربين</h3>
+                        <p>مجتمع يجمع المعربين العرب في مكان واحد — بقنوات متخصصة بمحركات الألعاب (يونيتي، أنريل وغيرها) لتبادل الخبرات التقنية.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 388 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/TDmCqsuYq7" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1510618565210935396/5e6b339d4951505afcf478d440a6a794.png?size=128" alt="شعار تعريبات تركي المطيري" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>تعريبات تركي المطيري</h3>
+                        <p>تعريبات تركي المطيري للألعاب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 225 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/t7e2Kvk7yS" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1532190624806342718/2a5034ef53122a1fb572a976aec905a4.png?size=128" alt="شعار تعريب Final Fantasy XV" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>تعريب Final Fantasy XV</h3>
+                        <p>فريق متخصص في تعريب لعبة Final Fantasy XV.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 25 عضو</span></div>
+                    </div>
+                    <a href="https://discord.gg/GaDMapkZ33" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+
+                <article class="comm-card reveal">
+                    <img src="https://cdn.discordapp.com/icons/1530515718007685162/520e9830f1dcf115c3b6172ba1e4a1e6.png?size=128" alt="شعار Arabic Games PC Zoo" class="comm-icon" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/0.png'" />
+                    <div class="comm-info">
+                        <h3>Arabic Games PC Zoo</h3>
+                        <p>مجتمع عربي لألعاب الحاسب.</p>
+                        <div class="comm-meta"><span class="comm-members"><i class="fa-solid fa-users"></i> 4 أعضاء</span></div>
+                    </div>
+                    <a href="https://discord.gg/4auhFgEmzh" target="_blank" rel="noopener" class="comm-join">انضم <i class="fa-brands fa-discord"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= مواقع التعريب ======= -->
+    <section class="section sites" id="sites">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">مواقع التعريب</span>
+                <h2>مصادر <span class="gradient-text">التعريبات</span></h2>
+                <p>كل مواقع ومكتبات التعريب في مكان واحد — ابحث عن لعبتك وحمّل تعريبها مباشرة.</p>
+            </div>
+
+            <div class="sites-grid">
+                <a href="https://mahfda.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=mahfda.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>محفظة للتعريبات</h3>
+                        <p>مكتبة ضخمة — ابحث عن لعبتك معربة 😁</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://www.nexusmods.com/profile/GamesinArabic/mods" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=nexusmods.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>GamesinArabic — Nexus Mods</h3>
+                        <span class="status-badge status-active"><i class="fa-solid fa-circle"></i> نشط</span>
+                        <span class="badge-academic"><i class="fa-solid fa-graduation-cap"></i> موثّق أكاديمياً</span>
+                        <p>مُعرّب موثّق بأكثر من 78 ألف تحميل.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://argameslibrary.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=argameslibrary.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>أرشيف الألعاب المعربة</h3>
+                        <p>أرشيف شامل للألعاب المعربة.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://www.skzezo.online/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=skzezo.online&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>SKZEZO — أرشيف عبدالعزيز</h3>
+                        <span class="status-badge status-active"><i class="fa-solid fa-circle"></i> نشط</span>
+                        <p>تعريبات الألعاب الكلاسيكية (Resident Evil 2، Code Veronica) والنسخ المدبلجة.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://arabic-batch-localization.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=arabic-batch-localization.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>تعريبات الألعاب</h3>
+                        <p>مدونة مهند الأقطع لتعريب الألعاب.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://arabictrilogy.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=arabictrilogy.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>مدونة حمزة الحمود</h3>
+                        <p>تعريب سلسلة GTA الثلاثية وأكثر.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://argamerzteam.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=argamerzteam.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>موقع عرب جيمرز</h3>
+                        <span class="status-badge status-stopped"><i class="fa-solid fa-circle"></i> متوقف</span>
+                        <p>تعريب وترجمة الألعاب وأخبارها.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://arb-sub.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=arb-sub.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>Arabic Subtitles</h3>
+                        <p>ترجمات عربية مجانية للألعاب.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://gaming-republic.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=gaming-republic.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>GAMING REPUBLIC</h3>
+                        <p>مدونة تعريب الألعاب والترجمة.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://www.t3reeb.games/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=t3reeb.games&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>مدونة تعريب</h3>
+                        <p>تعريبات ألعاب الكونسول (Souls، Resident Evil، GTA).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://majksa.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=majksa.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>أرشيف ماجد</h3>
+                        <p>تعريبات ماجد العتيبي (Metal Gear، Castlevania، RE).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://arraqim.github.io/alwakr/blog/zero.html" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=arraqim.github.io&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>الوكر للتعريبات</h3>
+                        <p>ترجمات أدبية للعناوين اليابانية (ياكوزا).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://arabichesham.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=arabichesham.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>Arabic_Hesham</h3>
+                        <p>معرّب فردي — 17 لعبة وأكثر من 4 ملايين كلمة بتعريب احترافي RTL.</p>
+                        <div class="site-links"><span class="site-tag"><i class="fa-brands fa-x-twitter"></i> @Arabic_Hesham</span></div>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://ta3reb.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=ta3reb.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>تعريب ألعاب</h3>
+                        <p>فريق متخصص — تعريبات PS4 والكونسول باحترافية عالية.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://fltah-translator.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=fltah-translator.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>FLTAH VIP</h3>
+                        <p>منصة ترجمة ألعاب للكمبيوتر — أكثر من 100 لعبة وبرنامج ترجمة.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://wolfgame-ar.site/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=wolfgame-ar.site&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>محمد فضل — Wolf Game</h3>
+                        <p>موقع Wolf Game — تعريب ألعاب الحاسوب والكونسول (الرابط يعمل لكن قائمة الملفات غير متاحة حالياً).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://translate.games" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=translate.games&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>Translate.Games</h3>
+                        <p>التعريبات الرسمية لفريق الحلم المتجدد — بأذن المطوّرين.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://majd-al-3orouba.web.app/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=majd-al-3orouba.web.app&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>موقع مجد العروبة</h3>
+                        <p>مكتبة تعريبات كاملة — سلسلة Metal Gear Solid بملفات التثبيت ودليل خطوة بخطوة.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://daftralaab.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=daftralaab.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>دفتر الألعاب</h3>
+                        <p>قاعدة بيانات مصوّرة لواجهات الألعاب العربية والمُعربة — أرشيف شامل للتعريبات.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://web.archive.org/web/20260714225246/https://muarrab.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=muarrab.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>مُعرَّب — دليل الألعاب المترجمة</h3>
+                        <p>محرك بحث شامل للألعاب المعربة رسمياً ومن الهواة — بلا إعلانات أو إعادة رفع.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://sites.google.com/view/athbistudio" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=sites.google.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>AthbiStudio — تعريب الريترو</h3>
+                        <span class="status-badge status-active"><i class="fa-solid fa-circle"></i> نشط</span>
+                        <span class="badge-academic"><i class="fa-solid fa-graduation-cap"></i> موثّق صحفياً — Waypoint/VICE 2017</span>
+                        <p>تعريبات السوبر نينتندو والنينتندو الكلاسيكية (Final Fantasy 6، Dragon Quest 3، كاسلفينيا).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://web.archive.org/web/20250719143601/https://www.ataraxia-translations.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=ataraxia-translations.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>أتاراكسيا للترجمات</h3>
+                        <p>فريق ترجمة أعمال تايب موون (Fate، Tsukihime) — روايات مرئية وخفيفة، مع مشروع تعريب Clock Tower (برج الساعة) للريترو.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://sgcq61.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=sgcq61.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>Arabized games</h3>
+                        <p>مدونة تعريبات ألعاب سوني — ألعاب PS3 معرّبة بتعليق عربي (مثل PES 2013) بملفات PKG جاهزة للتثبيت.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://kking-ar.github.io/Anything-AR/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=kking-ar.github.io&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>اي حاكة — Anything-AR (Kking)</h3>
+                        <p>موقع تعريبات الألعاب العربي للمطوّر كرار عبد المناف عسكر (Kking) — تعريبات احترافية للأندرويد والحاسوب بخطوط مناسبة لكل لعبة: بيكونيكو، الشمال الفاسد، ومونيومنت فالي 2 و3 — مستضاف على GitHub Pages والمستودع مفتوح.</p>
+                        <div class="site-links"><span class="site-tag"><i class="fa-brands fa-github"></i> github.com/KKING-ar/Anything-AR</span></div>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://taaribat.blogspot.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=taaribat.blogspot.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>تعريبات منسيات</h3>
+                        <p>مدونة أرشيفية متخصصة في جمع التعريبات المنسية وإتاحة الوصول الكامل إليها — ذاكرة مجتمع التعريب وحارس تراثه.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://wumdh.home.blog/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=wumdh.home.blog&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>مجتمع خارقو العادة</h3>
+                        <span class="status-badge status-active"><i class="fa-solid fa-circle"></i> نشط</span>
+                        <p>أقدم مجتمع تعريب عربي — منتدى 2003 وفريق 2005 (محمد سويلم) — أرشفة تاريخ التعريب وتعريبات النيس والسوبر نينتندو.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://pixelarab.com/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=pixelarab.com&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>أرشيف بيكسل عرب (PixelArab)</h3>
+                        <p>أكبر توثيق رقمي لتاريخ تعريب الريترو العربي — مقالات مصوّرة وموثقة (©2020-2026).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+
+                <a href="https://higurashi-ar.github.io/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=higurashi-ar.github.io&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>صدى حزيران — تعريب Higurashi</h3>
+                        <p>تعريب الرواية البصرية Higurashi (نواح الزيز) بدقة عالية — فريق صغير مع باب تطوع مفتوح.</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="https://alial-ojeely.github.io/Arabic-L10-Hub/" target="_blank" rel="noopener" class="site-card reveal">
+                    <div class="site-icon"><i class="fa-solid fa-globe"></i><img src="https://www.google.com/s2/favicons?domain=alial-ojeely.github.io&sz=64" alt="أيقونة الموقع" loading="lazy" onerror="this.style.display='none'" /></div>
+                    <div class="site-info">
+                        <h3>منصة Arabic L10 Hub</h3>
+                        <p>منصة تعريبات المترجمين المستقلين — تأسيس Ali Al-Ojeely (Mrdarkghosty) (The Relic، Partisans 1941، Gothic 1).</p>
+                    </div>
+                    <span class="site-visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= التذييل ======= -->
+    <footer class="footer">
+        <div class="container">
+            <p>صُنع بـ <i class="fa-solid fa-heart"></i> بواسطة <span class="gradient-text">محمد</span> — جميع الحقوق محفوظة © <span id="year"></span></p>
+            <p style="margin-top:6px;font-size:0.85rem"><i class="fa-solid fa-rocket"></i> نسخة مبسطة من الموسوعة — النسخة الكاملة (الألعاب، المعرّبون، الأدوات، الأرشيف، الخط الزمني) قريباً.</p>
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script>
+/* ==========================================================
+   موسوعة تعريب الألعاب العربية — النسخة المبسطة
+   ========================================================== */
+
+/* ---------- تأثير الكتابة (Typing Effect) ---------- */
+const ROLES_AR = ["سيرفرات الديسكورد", "مواقع تحميل التعريبات", "كل التعريب في مكان واحد"];
+const typingEl = document.getElementById("typing");
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+    if (!typingEl) return;
+    const current = ROLES_AR[roleIndex];
+
+    if (isDeleting) {
+        typingEl.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingEl.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let speed = isDeleting ? 45 : 95;
+
+    if (!isDeleting && charIndex === current.length) {
+        speed = 1800;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % ROLES_AR.length;
+        speed = 400;
+    }
+
+    setTimeout(type, speed);
+}
+type();
+
+/* ---------- شريط التنقل: لون عند التمرير + زر العودة للأعلى ---------- */
+const navbar = document.getElementById("navbar");
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 40);
+    backToTop.classList.toggle("show", window.scrollY > 500);
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* ---------- قائمة الجوال ---------- */
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    navLinks.classList.toggle("open");
+});
+
+/* إغلاق القائمة عند الضغط على أي رابط */
+navLinks.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("open");
+        navLinks.classList.remove("open");
+    });
+});
+
+/* ---------- تمييز الرابط النشط أثناء التمرير (Scrollspy) ---------- */
+const sections = document.querySelectorAll("section[id]");
+const links = document.querySelectorAll(".nav-link");
+
+const spy = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                links.forEach((l) => l.classList.remove("active"));
+                const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                if (active) active.classList.add("active");
+            }
+        });
+    },
+    { rootMargin: "-45% 0px -50% 0px" }
+);
+sections.forEach((s) => spy.observe(s));
+
+/* ---------- حركات الظهور ---------- */
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+/* ---------- تبديل الوضع الفاتح/الداكن ---------- */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+const THEME_LIST = ['dark', 'light'];
+const THEME_ICONS = { dark: 'fa-solid fa-moon', light: 'fa-solid fa-sun' };
+const THEME_TITLES = { dark: 'الوضع الداكن', light: 'الوضع الفاتح' };
+
+function setTheme(theme) {
+    if (!THEME_LIST.includes(theme)) theme = 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+    themeIcon.className = THEME_ICONS[theme] || 'fa-solid fa-moon';
+    themeToggle.setAttribute('aria-label', THEME_TITLES[theme] || 'تبديل المظهر');
+}
+
+let savedTheme = 'dark';
+try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+setTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(THEME_LIST[(THEME_LIST.indexOf(current) + 1) % THEME_LIST.length]);
+});
+
+/* ---------- سنة التذييل ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
