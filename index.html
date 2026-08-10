@@ -711,27 +711,6 @@ button { font-family: inherit; cursor: pointer; }
     border-color: transparent;
 }
 
-/* روابط إضافية داخل بطاقات المواقع */
-.site-links { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; }
-.site-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 12px;
-    font-size: 0.74rem;
-    font-weight: 700;
-    color: var(--secondary);
-    background: var(--gradient-soft);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    transition: var(--transition);
-}
-.site-tag:hover {
-    background: var(--gradient);
-    color: #fff;
-    border-color: transparent;
-}
-
 /* ===== روابط إضافية داخل بطاقات المواقع ===== */
 .follow-links { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; }
 .follow-site {
@@ -1099,6 +1078,25 @@ button { font-family: inherit; cursor: pointer; }
 }
 .credit-inner.disclaimer h3 { color: var(--accent); }
 .credit-inner.disclaimer p { font-size: 0.82rem; }
+.disclaimer-mascot {
+    display: block;
+    width: 52px;
+    height: 42px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    margin: 10px auto 0;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.25s ease;
+}
+.disclaimer-mascot:hover { opacity: 1; }
+.disclaimer-mascot.playing { animation: sansPulse 0.9s ease-in-out infinite; }
+@keyframes sansPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
 .contact-badges {
     display: flex;
     flex-wrap: wrap;
@@ -1204,11 +1202,6 @@ button { font-family: inherit; cursor: pointer; }
                     <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
                     <div class="stat-num"><span class="counter" data-target="36">0</span><span class="stat-plus">+</span></div>
                     <p>موقع تعريب</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="stat-num"><span id="visitorCount">0</span></div>
-                    <p>زائر منذ الإطلاق</p>
                 </div>
             </div>
         </div>
@@ -2187,7 +2180,9 @@ button { font-family: inherit; cursor: pointer; }
                 </div>
                 <div class="credit-inner disclaimer">
                     <h3><i class="fa-solid fa-triangle-exclamation"></i> إخلاء مسؤولية</h3>
-                    <p>هذا الموقع هو <strong>أرشيف توثيقي مجتمعي</strong> غير ربحي. المعلومات والروابط المذكورة هنا تم جمعها وتدقيقها من قبل مجتمع التعريب. <strong>أنا (محمد) لست مسؤولاً عن دقة كل معلومة أو استمرارية كل رابط، ولا أتحمل أي تبعات قانونية أو تقنية</strong> قد تنجم عن استخدام هذا المرجع. الموقع مفتوح للمساهمة، والمعلومات تُقدم "كما هي" لغرض حفظ التراث التاريخي.</p>
+                    <p>هذا الموقع <strong>أرشيف توثيقي مجتمعي غير ربحي</strong> يُعنى بحفظ تراث تعريب الألعاب العربية. المعلومات والروابط جُمعت ودُققت من قبل مجتمع التعريب، وقد تتغير أو تختفي بمرور الوقت.</p>
+                    <p><strong>لست مسؤولاً</strong> عن دقة كل معلومة أو استمرارية أي رابط، ولا أتحمل أي تبعات قانونية أو تقنية قد تنجم عن استخدام هذا المرجع. الموقع لا يستضيف ملفات القرصنة، وجميع أسماء الألعاب والعلامات ملك لأصحابها. المعلومات تُقدَّم «كما هي» لغرض التوثيق، والموقع مفتوح للمساهمات والتصحيحات.</p>
+                    <img src="sans.gif" alt="" role="button" tabindex="0" aria-label="تشغيل الصوت" class="disclaimer-mascot" loading="lazy" decoding="async" />
                 </div>
             </div>
             <div class="trust-badge">
@@ -2416,11 +2411,6 @@ const cardGroups = [
     document.querySelectorAll(".communities .comm-card"),
     document.querySelectorAll(".sites .site-card"),
 ];
-
-const store = {
-    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
-};
 
 function applySearch() {
     const norm = (s) => s.replace(/[\u064B-\u0652\u0670\u0640]/g, "").toLowerCase();
@@ -2732,17 +2722,27 @@ function runSelfCheck() {
 })();
 </script>
 <script>
-/* عداد الزوار المحسن (يعتمد على الجلسة الجديدة) */
-(function() {
-    // التحقق مما إذا كانت هذه جلسة جديدة للمتصفح
-    if (!sessionStorage.getItem('sessionCounted')) {
-        let count = parseInt(localStorage.getItem('visitorCount')) || 0;
-        count++;
-        localStorage.setItem('visitorCount', count);
-        sessionStorage.setItem('sessionCounted', 'true');
+/* صوت سانس — سر صغير: تشغيل/إيقاف عند الضغط (يدعم لوحة المفاتيح) */
+(function () {
+    var img = document.querySelector('.disclaimer-mascot');
+    if (!img) return;
+    var audio = new Audio('sans-sound.mp3');
+    audio.preload = 'none';
+    function toggle() {
+        if (audio.paused) {
+            audio.currentTime = 0;
+            audio.play().catch(function () {});
+            img.classList.add('playing');
+        } else {
+            audio.pause();
+            img.classList.remove('playing');
+        }
     }
-    // عرض العدد الحالي
-    document.getElementById('visitorCount').textContent = localStorage.getItem('visitorCount') || 0;
+    img.addEventListener('click', toggle);
+    img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+    audio.addEventListener('ended', function () { img.classList.remove('playing'); });
 })();
 </script>
 </body>
