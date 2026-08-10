@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1e"/>
+      <stop offset="1" stop-color="#141b33"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6c5ce7"/>
+      <stop offset="1" stop-color="#00d2ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6c5ce7" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#6c5ce7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 90 H1200 M0 180 H1200 M0 270 H1200 M0 360 H1200 M0 450 H1200 M0 540 H1200"/>
+    <path d="M100 0 V630 M200 0 V630 M300 0 V630 M400 0 V630 M500 0 V630 M600 0 V630 M700 0 V630 M800 0 V630 M900 0 V630 M1000 0 V630 M1100 0 V630"/>
+  </g>
+
+  <circle cx="950" cy="180" r="320" fill="url(#glow)"/>
+  <circle cx="200" cy="520" r="260" fill="url(#glow)"/>
+
+  <circle cx="600" cy="255" r="120" fill="none" stroke="url(#acc)" stroke-width="8"/>
+  <circle cx="600" cy="255" r="104" fill="#111a30"/>
+  <text x="600" y="315" font-size="90" text-anchor="middle">🎮</text>
+
+  <text x="600" y="455" font-size="60" font-weight="bold" fill="#e8ecf7" text-anchor="middle" font-family="Tajawal, Cairo, Arial, sans-serif" direction="rtl">مرجع مجتمع التعريب العربي</text>
+
+  <rect x="430" y="490" width="340" height="3" rx="1.5" fill="url(#acc)"/>
+
+  <text x="600" y="555" font-size="34" fill="#93a0bd" text-anchor="middle" font-family="Tajawal, Cairo, Arial, sans-serif" direction="rtl">سيرفرات ديسكورد • مواقع تعريب • تعريبات مجانية</text>
+</svg>

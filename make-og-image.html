@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تحويل og-image.svg → og-image.png</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+        background: #0a0f1e;
+        color: #e8ecf7;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+    }
+    .card {
+        background: #111a30;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 32px;
+        max-width: 680px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 10px; color: #00d2ff; }
+    p { color: #93a0bd; font-size: 0.95rem; line-height: 1.9; margin-bottom: 18px; }
+    canvas {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #0a0f1e;
+        display: block;
+        margin: 0 auto 18px;
+    }
+    button {
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 14px 34px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #6c5ce7, #00d2ff);
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { margin-top: 14px; font-size: 0.85rem; color: #93a0bd; }
+    .status.ok { color: #2ecc71; }
+    .status.err { color: #ff6b9d; }
+    a.back { display: inline-block; margin-top: 18px; color: #93a0bd; font-size: 0.85rem; text-decoration: none; }
+    a.back:hover { color: #00d2ff; }
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>🎨 تحويل صورة المشاركات إلى PNG</h1>
+    <p>هذه الصفحة تحوّل <b>og-image.svg</b> إلى <b>og-image.png</b> (1200×630) — صيغة PNG مقبولة لدى
+    واتساب وفيسبوك وديسكورد على عكس SVG. افتح هذه الصفحة في متصفحك من نفس مجلد الموقع،
+    ثم اضغط الزر. لا يحتاج إنترنت ولا أدوات.</p>
+    <canvas id="cv" width="1200" height="630"></canvas>
+    <button id="btn" disabled>تحويل وتنزيل og-image.png</button>
+    <div class="status" id="status">جارٍ تحميل og-image.svg…</div>
+    <a class="back" href="index.html">← العودة إلى الموقع</a>
+</div>
+
+<script>
+(function () {
+    var cv = document.getElementById('cv');
+    var ctx = cv.getContext('2d');
+    var btn = document.getElementById('btn');
+    var statusEl = document.getElementById('status');
+    var img = new Image();
+
+    img.onload = function () {
+        try {
+            ctx.drawImage(img, 0, 0, 1200, 630);
+            btn.disabled = false;
+            statusEl.textContent = '✅ جاهز — اضغط الزر لتنزيل og-image.png';
+            statusEl.className = 'status ok';
+        } catch (e) {
+            statusEl.textContent = '⚠️ تعذّر الرسم: ' + e.message;
+            statusEl.className = 'status err';
+        }
+    };
+    img.onerror = function () {
+        statusEl.textContent = '❌ لم أجد og-image.svg بجانب هذه الصفحة — تأكد أن الملف موجود في نفس المجلد.';
+        statusEl.className = 'status err';
+    };
+    img.src = 'og-image.svg';
+
+    btn.addEventListener('click', function () {
+        try {
+            var a = document.createElement('a');
+            a.href = cv.toDataURL('image/png');
+            a.download = 'og-image.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            statusEl.textContent = '✅ تم التنزيل! ضع og-image.png بجانب index.html (أو انسخه مع بقية الملفات عند النشر).';
+            statusEl.className = 'status ok';
+        } catch (e) {
+            statusEl.textContent = '❌ فشل التصدير: ' + e.message;
+            statusEl.className = 'status err';
+        }
+    });
+})();
+</script>
+</body>
+</html>
