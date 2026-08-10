@@ -25,3 +25,4 @@
 🔍 بحث فوري شامل لكل البطاقات.
 
 🏛️ توثيق صارم لكل معلومة بمصدر متحقق.
+https://m7md-zz.github.io/localization-lite/#home
